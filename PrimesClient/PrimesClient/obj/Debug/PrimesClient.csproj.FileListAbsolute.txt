@@ -1,0 +1,7 @@
+C:\automation\Primes\PrimesClient\PrimesClient\bin\Debug\PrimesClient.exe.config
+C:\automation\Primes\PrimesClient\PrimesClient\bin\Debug\PrimesClient.exe
+C:\automation\Primes\PrimesClient\PrimesClient\bin\Debug\PrimesClient.pdb
+C:\automation\Primes\PrimesClient\PrimesClient\obj\Debug\PrimesClient.csproj.CoreCompileInputs.cache
+C:\automation\Primes\PrimesClient\PrimesClient\obj\Debug\PrimesClient.exe
+C:\automation\Primes\PrimesClient\PrimesClient\obj\Debug\PrimesClient.pdb
+C:\automation\Primes\PrimesClient\PrimesClient\obj\Debug\PrimesClient.csprojAssemblyReference.cache
