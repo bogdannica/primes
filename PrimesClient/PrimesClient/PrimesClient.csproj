@@ -42,14 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.cs" />
-    <Compile Include="ExtenStream.cs" />
-    <Compile Include="HttpGeneric.cs" />
-    <Compile Include="Primes.cs" />
+    <Compile Include="Lib\Common.cs" />
+    <Compile Include="Lib\ExtenStream.cs" />
+    <Compile Include="Communication\HttpGeneric.cs" />
+    <Compile Include="Lib\TimeStamp.cs" />
+    <Compile Include="Lib\Primes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestData.cs" />
-    <Compile Include="RequestHeader.cs" />
+    <Compile Include="Communication\RequestData.cs" />
+    <Compile Include="Communication\RequestHeader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
