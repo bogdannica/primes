@@ -18,7 +18,6 @@ public class Main
 
     }
 
-
     private static void displayImg(String path, int resolution)
     {
         Picture picture = new Picture(path);

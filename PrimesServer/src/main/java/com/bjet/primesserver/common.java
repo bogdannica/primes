@@ -13,7 +13,7 @@ import java.util.regex.*;
 
 public class common {
 
-    public enum Pages {echoHeader, echoGet, echoPost, echoPut, expectedResults, getReport}
+    public enum Pages {getInt, echoPost, echoPut, expectedResults, getReport}
 
     private enum Types {delete, get, post, put}
 
@@ -84,18 +84,18 @@ public class common {
                 + he.getRequestMethod());
     }
 
-    public static class EchoGet implements HttpHandler {
+    public static class GetRandInt implements HttpHandler {
 
         @Override
         public void handle(HttpExchange he) throws IOException {
-            PrintCall(he, "EchoGet");
+            PrintCall(he, "GetRandInt");
             // parse request
             Map<String, Object> parameters = new HashMap<String, Object>();
             String query = ExtractQuerry(he);
             parseQuery(query, parameters);
             // send response
             int min = 0;
-            int max = 10000;
+            int max = 100000, delay = 0;
 
             if (parameters.size() > 0) {
                 if (parameters.containsKey("min")) {
@@ -105,21 +105,37 @@ public class common {
             if (parameters.containsKey("max")) {
                 max = Integer.parseInt(parameters.get("max").toString());
             }
+            if (parameters.containsKey("delay")) {
+                delay = Integer.parseInt(parameters.get("delay").toString());
+            }
             String response = Integer.toString(RandInt(min, max));
             he.sendResponseHeaders(200, response.length());
             OutputStream os = he.getResponseBody();
             os.write(response.getBytes());
-            //try { Thread.sleep(200);
-            //} catch (InterruptedException ie) {
-            //    ie.printStackTrace();
-            //}
+
+            //In case of slow network connection may have to be kept open longer
+            //to allow the client to read the response.
+            if(delay>0) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ie) {
+                    ie.printStackTrace();
+                }
+            }
             os.close();
         }
 
+        /*
+        generates a randoom int between the min and max (including max)
+        it doesn't have defensive code.
+        */
         private int RandInt(int min, int max) {
             return min + (int) (Math.random() * ((max - min) + 1));
         }
 
+        /*
+        generates a randoom int between the min and max (including max)
+         */
         private int RandIntProtected(int min, int max){
             Random ran = new Random();
             if (min > max) {

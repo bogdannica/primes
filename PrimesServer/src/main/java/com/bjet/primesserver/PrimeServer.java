@@ -2,8 +2,7 @@ package com.bjet.primesserver;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
+
 import com.sun.net.httpserver.HttpServer;
 
 public class PrimeServer {
@@ -16,7 +15,7 @@ public class PrimeServer {
             server = HttpServer.create(new InetSocketAddress(port), 0);
 
             System.out.println("HTTP SERVER started at " + port);
-            server.createContext("/" + common.Pages.echoGet, new common.EchoGet());
+            server.createContext("/" + common.Pages.getInt, new common.GetRandInt());
             server.createContext("/" + common.Pages.echoPost, new common.EchoPostPut());
             server.createContext("/" + common.Pages.echoPut, new common.EchoPostPut());
             server.setExecutor(null);
