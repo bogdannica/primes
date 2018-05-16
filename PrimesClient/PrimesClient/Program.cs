@@ -11,9 +11,9 @@ namespace PrimesClient
         static void Main(string[] args)
         {
             
-            string smallNumUrl = "http://localhost:8090/echoGet/min=1&max=999",
-                   mediumNumUrl = "http://localhost:8090/echoGet/min=1000&max=9999",
-                   largeNumUrl = "http://localhost:8090/echoGet/min=100000&max=10000000";
+            string smallNumUrl = "http://localhost:8090/getInt/min=1&max=999",
+                   mediumNumUrl = "http://localhost:8090/getInt/min=1000&max=9999",
+                   largeNumUrl = "http://localhost:8090/getInt/min=100000&max=10000000";
             do
             {
                 Work(smallNumUrl);
