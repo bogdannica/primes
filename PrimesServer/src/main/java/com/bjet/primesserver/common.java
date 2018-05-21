@@ -13,9 +13,10 @@ import java.util.regex.*;
 
 public class common {
 
-    public enum Pages {getInt, echoPost, echoPut, expectedResults, getReport}
+    public enum Pages {getInt, post, put, delete}
 
     private enum Types {delete, get, post, put}
+
 
     @SuppressWarnings("unchecked")
     public static void parseQuery(String query, Map<String, Object> parameters) throws UnsupportedEncodingException {
@@ -139,7 +140,7 @@ public class common {
         private int RandIntProtected(int min, int max){
             Random ran = new Random();
             if (min > max) {
-                throw new IllegalArgumentException("Cannot draw random int from invalid range [" + min + ", " + max + "].");
+                throw new IllegalArgumentException("ERROR: invalid range [" + min + ", " + max + "].");
             }
             int diff = max - min;
             if (diff >= 0 && diff != Integer.MAX_VALUE) {

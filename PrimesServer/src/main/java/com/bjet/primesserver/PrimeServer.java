@@ -16,8 +16,8 @@ public class PrimeServer {
 
             System.out.println("HTTP SERVER started at " + port);
             server.createContext("/" + common.Pages.getInt, new common.GetRandInt());
-            server.createContext("/" + common.Pages.echoPost, new common.EchoPostPut());
-            server.createContext("/" + common.Pages.echoPut, new common.EchoPostPut());
+            server.createContext("/" + common.Pages.post, new common.EchoPostPut());
+            server.createContext("/" + common.Pages.put, new common.EchoPostPut());
             server.setExecutor(null);
             server.start();
 
@@ -28,7 +28,7 @@ public class PrimeServer {
 
     public void Stop() {
         server.stop(0);
-        System.out.println("server stopped");
+        System.out.println("HTTP SERVER  stopped");
     }
 
 }
