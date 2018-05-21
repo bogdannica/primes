@@ -21,4 +21,11 @@ http://<server url>:<port>/getInt/min=55&max=89&delay=500	-> the response is a r
  
 Client
 ----------------
+by default the server url is set to http://localhost:8090
+when run the client is prompted to replace url or keep the default.
 
+first part of the client will execute one call at a time to the server, prompting for min, max limit, 
+and analysing the response of the server wither is prime or not.
+in case min>max server will return an error that will be captured by client and dysplayed.
+
+second part of the client if chosen can run in loop calls between limits and dysplay the found primes.

@@ -118,7 +118,7 @@ public class common {
                 //response = Integer.toString(RandInt(min, max));
                 response = Integer.toString(RandIntProtected(min, max));
             }
-            
+
             he.sendResponseHeaders(rcode, response.length());
             OutputStream os = he.getResponseBody();
             os.write(response.getBytes());

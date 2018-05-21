@@ -15,9 +15,9 @@ namespace PrimesClient
             if (string.IsNullOrEmpty(server)) { server = "http://localhost:8090"; }
 
 
-            string smallNumUrl = "http://localhost:8090/getInt/min=1&max=999",
-                   mediumNumUrl = "http://localhost:8090/getInt/min=1000&max=9999",
-                   largeNumUrl = "http://localhost:8090/getInt/min=100000&max=10000000";
+            string smallNumUrl = server+"/getInt/min=1&max=999",
+                   mediumNumUrl = server + "/getInt/min=1000&max=9999",
+                   largeNumUrl = server + "/getInt/min=100000&max=10000000";
 
 
             do
