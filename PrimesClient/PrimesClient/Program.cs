@@ -19,7 +19,7 @@ namespace PrimesClient
                    mediumNumUrl = server + "/getInt/min=1000&max=9999",
                    largeNumUrl = server + "/getInt/min=100000&max=10000000";
 
-
+            //one call at a time to the server
             do
             {
                 string min = "", max = "";
