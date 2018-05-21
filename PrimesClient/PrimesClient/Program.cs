@@ -20,7 +20,7 @@ namespace PrimesClient
                 Loop(smallNumUrl);
                 Loop(mediumNumUrl);
                 Loop(largeNumUrl);
-            } while ("continue? (y/n)".ConsoleIn() != "y");
+            } while ("continue? (y/n)".ConsoleIn() == "y");
             
         }
 
