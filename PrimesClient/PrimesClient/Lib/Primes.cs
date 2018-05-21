@@ -10,6 +10,13 @@ namespace PrimesClient
         static CancellationTokenSource STOP = new CancellationTokenSource();
 
         const string FORMAT = "PRIME: {0}";
+
+        /// <summary>
+        /// To show the algorithm is much faster different functions 
+        /// are called for different length of the integer
+        /// </summary>
+        /// <param name="res"></param>
+        /// <returns></returns>
         internal static string IsPrime(int res)
         {
             if (res.ToString().Length < 3)
