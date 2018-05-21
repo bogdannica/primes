@@ -109,8 +109,17 @@ public class common {
             if (parameters.containsKey("delay")) {
                 delay = Integer.parseInt(parameters.get("delay").toString());
             }
-            String response = Integer.toString(RandInt(min, max));
-            he.sendResponseHeaders(200, response.length());
+            String response = "";
+            int rcode = 200;
+            if(min>max) {
+                response = "ERROR: invalid range [" + min + ", " + max + "].";
+                rcode = 403;
+            } else {
+                //response = Integer.toString(RandInt(min, max));
+                response = Integer.toString(RandIntProtected(min, max));
+            }
+            
+            he.sendResponseHeaders(rcode, response.length());
             OutputStream os = he.getResponseBody();
             os.write(response.getBytes());
 
@@ -140,7 +149,7 @@ public class common {
         private int RandIntProtected(int min, int max){
             Random ran = new Random();
             if (min > max) {
-                throw new IllegalArgumentException("ERROR: invalid range [" + min + ", " + max + "].");
+                return -1;
             }
             int diff = max - min;
             if (diff >= 0 && diff != Integer.MAX_VALUE) {
